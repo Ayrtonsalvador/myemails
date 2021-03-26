@@ -1,0 +1,42 @@
+* {font-family: 'seravek extralight', Helvetica, sans-serif;
+    margin: 0;}
+
+body {display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgb(235, 235, 235)
+      /* height: 100vh; */
+      /* justify-content: center; */}
+
+.row {display: flex;
+        align-items: center;
+        /* justify-content:center; */
+        width: 50%;
+        background-color: #ffffff;
+        border: 2px solid rgb(213, 213, 213);
+        border-radius: 5px;
+        padding: 15px;}
+
+.avatar {border-radius: 50%;
+        border: 1px solid green;
+        height: 80px;
+        margin: 30px;}
+
+.trash {height: 30px;
+        margin: 30px;
+        margin-left: auto}
+
+#newmsg {display: block;
+        height: 21px;
+        width: 100vh;                
+        border: rgb(86, 153, 230) solid 1px;
+        border-radius: 3px;}
+
+#btnadd {display: flex;
+        justify-content: center;;
+        height: 26px;
+        width: 45px;
+        margin-left: 5px;
+        color: rgb(86, 153, 230);
+        border: rgb(86, 153, 230) solid 1px;
+        border-radius: 3px;}
