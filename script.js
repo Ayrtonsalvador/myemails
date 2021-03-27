@@ -1,12 +1,13 @@
-var count = document.getElementsByTagName("p");
-var compteur = document.getElementById("count");
-compteur.textContent = count.length;
+var count = document.getElementsByTagName("p").length;
+document.getElementById("count").textContent = count;
 
 for(var i = 0; i < document.getElementsByClassName("trash").length; i++) {
     document.getElementsByClassName("trash")[i].addEventListener('click', function() {
         this.parentNode.remove()
 
-        compteur.textContent = count.length;
+        var count = document.getElementsByTagName("p").length;
+        document.getElementById("count").textContent = count;
+
         if(document.getElementsByTagName("p").length < 2) {
             document.getElementById("pluriel").remove()}
     })
@@ -14,7 +15,7 @@ for(var i = 0; i < document.getElementsByClassName("trash").length; i++) {
 
 document.getElementById("btnadd").addEventListener("click", function(){
 
-    var newRow = document.createElement("div")
+    var newRow = document.createElement("div");
     newRow.className = "row";
     document.body.appendChild(newRow);
 
@@ -41,15 +42,16 @@ document.getElementById("btnadd").addEventListener("click", function(){
 
     document.getElementById('newmsg').value = "";
 
-    var count = document.getElementsByTagName('p');
-    var compteur = document.getElementById('count');
-    compteur.textContent = count.length;
+    var count = document.getElementsByTagName("p").length;
+    document.getElementById("count").textContent = count;
 
     for(var i = 0; i < document.getElementsByClassName("trash").length; i++) {
         document.getElementsByClassName("trash")[i].addEventListener('click', function() {
-            this.parentNode.remove()
+            this.parentNode.remove();
 
-            compteur.textContent = count.length;
+            var count = document.getElementsByTagName("p").length;
+            document.getElementById("count").textContent = count;
+            
             if(document.getElementsByTagName("p").length < 2) {
                 document.getElementById("pluriel").remove()}
         })
