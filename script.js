@@ -1,17 +1,21 @@
 var count = document.getElementsByTagName("p").length;
 document.getElementById("count").textContent = count;
 
-for(var i = 0; i < document.getElementsByClassName("trash").length; i++) {
-    document.getElementsByClassName("trash")[i].addEventListener('click', function() {
-        this.parentNode.remove()
-
-        var count = document.getElementsByTagName("p").length;
-        document.getElementById("count").textContent = count;
-
-        if(document.getElementsByTagName("p").length < 2) {
-            document.getElementById("pluriel").remove()}
-    })
+var trashInit = function() {
+    for(var i = 0; i < document.getElementsByClassName("trash").length; i++) {
+        document.getElementsByClassName("trash")[i].addEventListener('click', function() {
+            this.parentNode.remove()
+    
+            var count = document.getElementsByTagName("p").length;
+            document.getElementById("count").textContent = count;
+    
+            if(document.getElementsByTagName("p").length < 2) {
+                document.getElementById("pluriel").remove()}
+        })
+    }
 }
+
+trashInit();
 
 var displayMsg = function(){
 
@@ -47,18 +51,8 @@ var displayMsg = function(){
     var count = document.getElementsByTagName("p").length;
     document.getElementById("count").textContent = count;
 
-    for(var i = 0; i < document.getElementsByClassName("trash").length; i++) {
-        document.getElementsByClassName("trash")[i].addEventListener('click', function() {
-            this.parentNode.remove();
-
-            var count = document.getElementsByTagName("p").length;
-            document.getElementById("count").textContent = count;
-
-            if(document.getElementsByTagName("p").length < 2) {
-                document.getElementById("pluriel").remove()}
-        })
+    trashInit();
     }
-}
 }
 
 document.getElementById("btnadd").addEventListener("click", displayMsg);
@@ -67,9 +61,8 @@ document.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("btnadd").click();
-    }
-    
-  });
+        }
+    });
 
 
 
