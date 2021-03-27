@@ -48,6 +48,7 @@ document.getElementById("btnadd").addEventListener("click", function(){
     for(var i = 0; i < document.getElementsByClassName("trash").length; i++) {
         document.getElementsByClassName("trash")[i].addEventListener('click', function() {
             this.parentNode.remove()
+
             compteur.textContent = count.length;
             if(document.getElementsByTagName("p").length < 2) {
                 document.getElementById("pluriel").remove()}
