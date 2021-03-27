@@ -40,3 +40,5 @@ body {display: flex;
         color: rgb(86, 153, 230);
         border: rgb(86, 153, 230) solid 1px;
         border-radius: 3px;}
+
+p {margin-right: 50px}

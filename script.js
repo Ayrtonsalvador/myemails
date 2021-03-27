@@ -13,7 +13,9 @@ for(var i = 0; i < document.getElementsByClassName("trash").length; i++) {
     })
 }
 
-document.getElementById("btnadd").addEventListener("click", function(){
+var displayMsg = function(){
+
+    if (document.getElementById('newmsg').value != "") {
 
     var newRow = document.createElement("div");
     newRow.className = "row";
@@ -51,9 +53,23 @@ document.getElementById("btnadd").addEventListener("click", function(){
 
             var count = document.getElementsByTagName("p").length;
             document.getElementById("count").textContent = count;
-            
+
             if(document.getElementsByTagName("p").length < 2) {
                 document.getElementById("pluriel").remove()}
         })
     }
-})
+}
+}
+
+document.getElementById("btnadd").addEventListener("click", displayMsg);
+
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("btnadd").click();
+    }
+    
+  });
+
+
+
